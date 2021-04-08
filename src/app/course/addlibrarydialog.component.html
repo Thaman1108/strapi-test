@@ -1,0 +1,45 @@
+<h2 mat-dialog-title>Details</h2>
+<mat-dialog-content class="mat-typography">
+    <div *ngIf="!createStatus">
+        <mat-form-field appearance="outline" class="matinputblock" style="min-width: 20vw;">
+            <mat-label>Library Name</mat-label>
+            <input matInput placeholder="Library Name" [(ngModel)]="libraryname">
+        </mat-form-field><br>
+        <mat-form-field appearance="outline" style="min-width: 20vw;">
+            <mat-label>Library Description</mat-label>
+            <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="5"
+                cdkAutosizeMaxRows="10" [(ngModel)]="librarydescription"></textarea>
+        </mat-form-field>
+    </div>
+    <div cdkDropListGroup *ngIf="createStatus">
+        <div class="example-container">
+          <h2>To do</h2>
+      
+          <div
+            cdkDropList
+            [cdkDropListData]="todo"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+          </div>
+        </div>
+      
+        <div class="example-container">
+          <h2>Done</h2>
+      
+          <div
+            cdkDropList
+            [cdkDropListData]="done"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+          </div>
+        </div>
+      </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button  mat-raised-button mat-dialog-close>Cancel</button>
+    <button  *ngIf="!createStatus"mat-raised-button [disabled]="librarydescription == '' || libraryname == ''"(click)="createStatus =! createStatus">Create</button>
+    <button  *ngIf="createStatus"mat-raised-button >Submit</button>
+</mat-dialog-actions>

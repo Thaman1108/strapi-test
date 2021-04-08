@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 import { saveAs } from "file-saver";
-import {environment } from '../../environments/environment'
+import {environment } from '../../environments/environment';
+import { MatDialog } from '@angular/material/dialog';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+
+
 @Component({
   selector: 'app-course',
   templateUrl: './course.component.html',
@@ -10,7 +14,8 @@ import {environment } from '../../environments/environment'
 export class CourseComponent implements OnInit {
   courses :any = [];
   httplink = environment.apiUrl;
-  constructor(private service: AppService) { }
+  panelOpenState = false;
+  constructor(private service: AppService, public dialog :  MatDialog) { }
 
   ngOnInit(): void {
     this.service.getCall('/Categories').subscribe((response) => {
@@ -23,4 +28,47 @@ export class CourseComponent implements OnInit {
     let blob = await fetch(link).then(r => r.blob());
     saveAs(blob, name)
   }
+    openDialog() {
+        const dialogRef = this.dialog.open(AddLibraryDialogComponent);
+    
+        dialogRef.afterClosed().subscribe(result => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
 }
+
+@Component({
+    selector: 'app-addlibrarydialog',
+    templateUrl: 'addlibrarydialog.component.html',
+  })
+  export class AddLibraryDialogComponent {
+    librarydescription= "";
+    libraryname = "";
+    createStatus : boolean = false;
+    constructor(public dialog :  MatDialog) { }
+    todo = [
+      'Get to work',
+      'Pick up groceries',
+      'Go home',
+      'Fall asleep'
+    ];
+  
+    done = [
+      'Get up',
+      'Brush teeth',
+      'Take a shower',
+      'Check e-mail',
+      'Walk dog'
+    ];
+    
+    drop(event: CdkDragDrop<string[]>) {
+      if (event.previousContainer === event.container) {
+        moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      } else {
+        transferArrayItem(event.previousContainer.data,
+                          event.container.data,
+                          event.previousIndex,
+                          event.currentIndex);
+      }
+    }
+   }

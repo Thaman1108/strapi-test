@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "course-ui"
+  "defaultProject": "course-ui",
+  "cli": {
+    "analytics": false
+  }
 }
