@@ -1,0 +1,17 @@
+<div class="container-blk">
+    <div>
+        <mat-form-field appearance="outline" class="matinputblock" style="min-width: 20vw;">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Placeholder" [(ngModel)]="email">
+        </mat-form-field><br>
+        <mat-form-field appearance="outline" class="matinputblock" style="min-width: 20vw;">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Placeholder" type="password" data-type="password" [(ngModel)]="password">
+        </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" (click)="loginUser();">Sign In</button>
+    <div class="hr"></div>
+    <div class="foot-lnk">
+        <a (click)="resetPassword()">Forgot Password?</a>
+    </div>
+</div>
