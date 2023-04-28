@@ -1,56 +1,55 @@
-## Sobedecor
+## Sobedecor setup
 
     This project is a simple Laravel-React setup for building multi-page ecommerce applications.
 
 ## Requirements
 
-    PHP 8.1 or higher
-    Composer
-    Node.js and npm
-    MySQL or another relational database
-    Installation
-    Clone the repository and navigate to the project directory:
+    - PHP 8.1 or higher
+    - Laravel framework 9.1
+    - Composer
+    - Node.js and npm
+    - MySQL 
 
 ### Steps to setup the application
 - **Clone the repository:**
 
-    git clone https://github.com/your-username/your-repo-name.git
-    cd your-repo-name
+      git clone https://github.com/your-username/your-repo-name.git
+      cd your-repo-name
 
 - **Install PHP dependencies:**
 
-    composer install
-    Install Node.js dependencies:
-    
-    npm install
+      composer install
+      Install Node.js dependencies:
+
+      npm install
 
 - **Create the .env file:**
 
-    Create a .env file and update the necessary details
+      Create a .env file and update the necessary details
 
 - **Generate an application key**
 
-    php artisan key:generate
+      php artisan key:generate
 
 - **Update database details**
     
-    Open your .env and update the details.
-    DB_DATABASE=<DATABASE_NAME>
-    DB_USERNAME=<USERNAME>
-    DB_PASSWORD=<PASSWORD>
+      Open your .env and update the details.
+      DB_DATABASE=<DATABASE_NAME>
+      DB_USERNAME=<USERNAME>
+      DB_PASSWORD=<PASSWORD>
 
 - **Run database migrations and seed the database:**
 
-    php artisan migrate
+      php artisan migrate
     
 - **Build the React app**
 
-    npm run build
+      npm run build
 
 - **Start the development server:**
 
-    php artisan serve
-    Open your browser and navigate to http://127.0.0.1:8000/.
+      php artisan serve
+      Open your browser and navigate to http://127.0.0.1:8000/.
 
 ## Usage
 
