@@ -4,11 +4,11 @@
 
 ## Requirements
 
-    - PHP 8.1 or higher
-    - Laravel framework 9.1
-    - Composer
-    - Node.js and npm
-    - MySQL 
+  - PHP 8.1 or higher
+  - Laravel framework 9.1
+  - Composer
+  - Node.js and npm
+  - MySQL 
 
 ### Steps to setup the application
 - **Clone the repository:**
