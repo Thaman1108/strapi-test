@@ -1,27 +1,63 @@
-# CourseUi
+## Sobedecor
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
+    This project is a simple Laravel-React setup for building multi-page ecommerce applications.
 
-## Development server
+## Requirements
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+    PHP 8.1 or higher
+    Composer
+    Node.js and npm
+    MySQL or another relational database
+    Installation
+    Clone the repository and navigate to the project directory:
 
-## Code scaffolding
+### Steps to setup the application
+**Clone the repository:**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    git clone https://github.com/your-username/your-repo-name.git
+    cd your-repo-name
 
-## Build
+**Install PHP dependencies:**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+    composer install
+    Install Node.js dependencies:
+    
+    npm install
 
-## Running unit tests
+**Create the .env file:**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    Create a .env file and update the necessary details
 
-## Running end-to-end tests
+**Generate an application key**
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+    php artisan key:generate
 
-## Further help
+**Update database details**
+    Open your .env and update the details.
+    DB_DATABASE=<DATABASE_NAME>
+    DB_USERNAME=<USERNAME>
+    DB_PASSWORD=<PASSWORD>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+**Run database migrations and seed the database:**
+
+    php artisan migrate
+    
+**Build the React app**
+
+    npm run build
+
+**Start the development server:**
+
+    php artisan serve
+    Open your browser and navigate to http://127.0.0.1:8000/.
+
+## Usage
+
+This project includes a basic directory structure for building multi-page web applications with Laravel and React. 
+You can add new pages by creating a new directory in resources/js/pages and adding a new route in routes/web.php.
+
+React components should be stored in resources/js/components.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
