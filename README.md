@@ -12,42 +12,42 @@
     Clone the repository and navigate to the project directory:
 
 ### Steps to setup the application
-**Clone the repository:**
+- **Clone the repository:**
 
     git clone https://github.com/your-username/your-repo-name.git
     cd your-repo-name
 
-**Install PHP dependencies:**
+- **Install PHP dependencies:**
 
     composer install
     Install Node.js dependencies:
     
     npm install
 
-**Create the .env file:**
+- **Create the .env file:**
 
     Create a .env file and update the necessary details
 
-**Generate an application key**
+- **Generate an application key**
 
     php artisan key:generate
 
-**Update database details**
+- **Update database details**
     
     Open your .env and update the details.
     DB_DATABASE=<DATABASE_NAME>
     DB_USERNAME=<USERNAME>
     DB_PASSWORD=<PASSWORD>
 
-**Run database migrations and seed the database:**
+- **Run database migrations and seed the database:**
 
     php artisan migrate
     
-**Build the React app**
+- **Build the React app**
 
     npm run build
 
-**Start the development server:**
+- **Start the development server:**
 
     php artisan serve
     Open your browser and navigate to http://127.0.0.1:8000/.
