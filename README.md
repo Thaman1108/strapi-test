@@ -53,6 +53,8 @@
 
 ## Usage
 
+To run the React app in development mode, you can use the following command: npm run dev. This will start the development server and open your browser at http://localhost:3000. You can make changes to your React components and see them live reload in the browser.
+
 This project includes a basic directory structure for building multi-page web applications with Laravel and React. 
 You can add new pages by creating a new directory in resources/js/pages and adding a new route in routes/web.php.
 
