@@ -33,6 +33,7 @@
     php artisan key:generate
 
 **Update database details**
+    
     Open your .env and update the details.
     DB_DATABASE=<DATABASE_NAME>
     DB_USERNAME=<USERNAME>
